@@ -18,7 +18,7 @@ post '/payment' do
   puts "params: #{payload}"
 
   #Instantiate a new Stripe Client
-  client = StripeClient::Client.new(api_key: StripeClient::PRIVATE_KEY)
+  client = StripeClient::Client.new(api_key: PrivateKeys::PRIVATE_KEY)
   
   #Charge -> Pay in Stripe
   StripeClient::Charge.new(client).create(payload)
